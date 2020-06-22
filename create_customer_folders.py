@@ -12,6 +12,8 @@ file = 'customers.txt'
 if not os.path.exists(file):
   # if it doesn't exist stop with error message
   print('Error: file ' + file +' does not exist!')
+  # exit the program
+  exit()
 # if file exists 
 else:
   print('File found: ' + file )
@@ -21,9 +23,10 @@ else:
   customers = []
   # read all lines in file
   for line in f:
-    print( 'adding ' + line + ' to the list' )
+    name = line.rstrip('\n')
+    print( 'adding ' + name + ' to the list' )
     # add line to the list
-    customers.append( line.rstrip('\n') )
+    customers.append( name )
   print( customers )
 
 # loop though the List
